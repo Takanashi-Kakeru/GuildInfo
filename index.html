@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light">
+<title>치즈냥이 길드원 모집</title>
+
+<!-- ファビコン -->
+<link rel="icon" type="image/png" sizes="256x256" href="https://cdn.discordapp.com/attachments/1407222671120400438/1407222733732843660/d6ae768db37d32f5.png?ex=68c59e8c&is=68c44d0c&hm=924f7f3f47bc35245a81e7f9a38b3ff8bf8b39368d7e0047dbf14c2e80d469dd&">
+<link rel="shortcut icon" type="image/png" href="https://cdn.discordapp.com/attachments/1407222671120400438/1407222733732843660/d6ae768db37d32f5.png?ex=68c59e8c&is=68c44d0c&hm=924f7f3f47bc35245a81e7f9a38b3ff8bf8b39368d7e0047dbf14c2e80d469dd&">
+<link rel="apple-touch-icon" href="https://cdn.discordapp.com/attachments/1407222671120400438/1407222733732843660/d6ae768db37d32f5.png?ex=68c59e8c&is=68c44d0c&hm=924f7f3f47bc35245a81e7f9a38b3ff8bf8b39368d7e0047dbf14c2e80d469dd&">
+
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+                                                           
+<!-- 
+ .M"""bgd MMP""MM""YMM `YMM'   `MM'`7MMF'      `7MM"""YMM  
+,MI    "Y P'   MM   `7   VMA   ,V    MM          MM    `7  
+`MMb.          MM         VMA ,V     MM          MM   d    
+  `YMMNq.      MM          VMMP      MM          MMmmMM    
+.     `MM      MM           MM       MM      ,   MM   Y  , 
+Mb     dM      MM           MM       MM     ,M   MM     ,M 
+P"Ybmmd"     .JMML.       .JMML.   .JMMmmmmMMM .JMMmmmmMMM 
+ -->
+                                                           
+<style>
+  :root{
+    color-scheme: light;
+    --ink:#1f2328; --muted:#6b7280; --line:#ececf1; --card:#ffffff;
+    --bg1:#fafafc; --bg2:#f7f7fb; --accent:#FFC94A; --accent-deep:#E3AE2F;
+  }
+
+  /* ホームページ全域 */
+  html, body { overflow-x: hidden; }
+  @supports (overflow-x: clip){ html, body { overflow-x: clip; } }
+  *{ box-sizing:border-box }
+  html{ color-scheme: light !important; }
+  body{
+    margin:0; padding:0; min-height:100%;
+    background:linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:var(--ink);
+    font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    line-height:1.6;
+  }
+  .wrap{ max-width:1000px; margin:auto; padding:28px }
+
+  /* タイトルバナー */
+  .banner{
+    position:relative; border-radius:20px; background:var(--card); border:1px solid var(--line);
+    box-shadow:0 10px 30px rgba(0,0,0,.06); padding:28px 24px; margin-bottom:22px;
+  }
+  .hero{
+    display:grid;
+    grid-template-columns: clamp(110px,16vw,168px) 1fr;
+    gap: clamp(14px,2.4vw,28px);
+    align-items:center;
+  }
+  .logo-wrap{
+    --rx:0deg; --ry:0deg; --scale:1;
+    position:relative; display:inline-block; perspective:1000px; text-align:center;
+    justify-self:start;
+  }
+  .logo-img{
+    width:clamp(110px,16vw,168px); height:auto; display:block; border-radius:16px;
+    transform:rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--scale));
+    transition:transform .25s ease;
+  }
+  .logo-wrap:hover{ --scale:1.06; }
+  .logo-wrap::after{ content:none !important; }
+  .logo-shadow{
+    position:absolute; top:100%; left:50%; transform:translateX(-50%);
+    width:150%; height:14px; filter:blur(10px); opacity:.35; pointer-events:none;
+    background:radial-gradient(ellipse at center, rgba(255,210,100,.28) 0%, rgba(255,210,100,0) 75%);
+  }
+  .hero-text{ display:flex; flex-direction:column; justify-content:center; }
+
+  /* タイトル */
+  #titleCute{
+    font-family:'Jua',sans-serif;
+    font-size: clamp(42px,6.2vw,64px);
+    line-height:1.1;
+    margin:-2px 0 8px;
+    display:inline-flex; gap:4px; align-items:baseline; overflow:hidden;
+
+    /* グラディエント効果 */
+    background:linear-gradient(90deg,#FFB800,#FFE873);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+
+    background-size:200% 100%;
+    animation:titlePan 16s linear infinite;
+  }
+  @keyframes titlePan{ 0%{background-position:0% 50%} 100%{background-position:100% 50%} }
+
+  .title-ch{
+    display:inline-block; letter-spacing:0; text-align:center; background:inherit;
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+    will-change:transform;
+    animation:titleBob 6s ease-in-out infinite;
+  }
+  .title-ch:nth-child(2){ animation-delay:.2s }
+  .title-ch:nth-child(3){ animation-delay:.4s }
+  .title-ch:nth-child(4){ animation-delay:.6s }
+  @keyframes titleBob{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-2px) } }
+
+  .img-mode{
+    background:none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    color: initial !important;
+    line-height:1;
+  }
+  .title-img{
+    display:inline-block; height:0.92em; max-width:100%; width:auto; object-fit:contain;
+    vertical-align:-0.08em; image-rendering:auto;
+  }
+
+  .catch{
+    margin:2px 0 0; color:var(--muted); font-weight:500;
+    font-size: clamp(14px,2.2vw,18px); line-height:1.5;
+  }
+
+  /* タブ */
+  .tabs{position:relative;display:flex;gap:6px;border-bottom:1px solid var(--line);margin:18px 0 10px}
+  .tab{position:relative;padding:12px 14px;border-radius:10px;color:#4b5563;font-weight:600;cursor:pointer;transition:color .2s;background:none;border:0}
+  .tab:hover{color:#111827}
+  .tab.active{color:#111827}
+  .indicator{position:absolute;bottom:-1px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-deep));border-radius:999px;transition:transform .3s,width .3s}
+
+  /* タブ コンテンツ */
+  .tab-content{display:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;animation:fadeIn .35s ease}
+  .tab-content.active{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  /* 情報 */
+  .info-box{
+    position:relative;padding:20px 16px 18px 18px;border-radius:12px;
+    background:linear-gradient(180deg,#fff,#fffdf8);border:1px solid #f1e7c9; overflow:hidden;
+  }
+  .info-box::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:12px 0 0 12px;
+    background:linear-gradient(180deg,var(--accent),var(--accent-deep));
+  }
+  .lead{font-weight:700;color:#2c2c2c;margin:0 0 14px 0;line-height:1.75}
+  .muted{color:var(--muted);margin:0 0 18px 0;line-height:1.8}
+  .info-box p{margin:0 0 16px 0;line-height:1.85}
+  .info-box p:last-child{margin-bottom:0}
+
+  /* チップ */
+  .chips{
+    position:relative;display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 6px;align-items:center;padding-block:4px
+  }
+  .chip{
+    position:relative; display:inline-flex; align-items:center; gap:8px;
+    padding:8px 14px; border-radius:999px; border:1px solid #d7b855;
+    background: linear-gradient(180deg, #ffdf7a, #ffc94a);
+    color:#3a2a00; font-weight:700; font-size:15px; letter-spacing:.1px;
+    box-shadow: 0 2px 10px rgba(255, 186, 58, .25), inset 0 1px 0 rgba(255,255,255,.4);
+    transform: translateY(0); animation: chipBob 2.6s ease-in-out infinite;
+    overflow:hidden;
+  }
+  .chip:nth-child(1){animation-delay:0s}
+  .chip:nth-child(2){animation-delay:.2s}
+  .chip:nth-child(3){animation-delay:.4s}
+  .chip:nth-child(4){animation-delay:.6s}
+  .chip::after{
+    content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+    background: linear-gradient(145deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+    background-size:200% 200%;
+    animation: chipsShimmer 3.2s linear infinite;
+    mix-blend-mode:screen;
+  }
+
+  .chip:nth-child(1)::after{ animation-delay: 0s; }
+  .chip:nth-child(2)::after{ animation-delay: .3s; }
+  .chip:nth-child(3)::after{ animation-delay: .6s; }
+  .chip:nth-child(4)::after{ animation-delay: .9s; }
+
+  @keyframes chipsShimmer{ to{ background-position:120% 120%; } }
+  @keyframes chipBob{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-4px) } }
+
+  .chips:hover .chip{ animation-play-state: paused; transition:transform .18s ease, filter .18s ease, opacity .18s ease; }
+  .chips:hover .chip:hover{ transform:translateY(-1px) scale(1.06); z-index:1; box-shadow:0 6px 18px rgba(255, 186, 58, .35), inset 0 1px 0 rgba(255,255,255,.6); }
+  .chips:hover .chip:not(:hover){ opacity:.45; filter:saturate(.7); }
+
+  /* ポイント リスト */
+  .point-list{display:grid;gap:10px;margin:16px 0 0 0;padding:0;list-style:none}
+  .point-list li{display:flex;gap:10px;align-items:flex-start;line-height:1.8}
+  .bullet{width:8px;height:8px;border-radius:50%;background:linear-gradient(180deg,var(--accent),var(--accent-deep));margin-top:10px;flex:0 0 8px}
+
+  /* スライダ */
+  .slider{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#0b0b0b;margin-top:16px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  .slides{display:flex;height:100%;transition:transform .6s ease}
+  .slides img{width:100%;height:100%;flex-shrink:0;object-fit:contain;background:#000}
+  .slider button{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:40px;height:40px;border:none;border-radius:999px;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);
+    color:#fff;font-size:18px;cursor:pointer;transition:background .2s, transform .2s
+  }
+  .slider button:hover{background:rgba(255,255,255,.3);transform:translateY(-50%) scale(1.05)}
+  .slider .prev{left:10px}.slider .next{right:10px}
+  .dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+  .dot{width:22px;height:4px;border-radius:4px;background:#cfd3da;cursor:pointer;transition:background .2s,width .2s;border:0}
+  .dot.active{background:linear-gradient(90deg,var(--accent),var(--accent-deep));width:32px}
+
+  /* ボタン */
+  .cta-row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:10px 16px; border-radius:999px; font-weight:800; font-size:15px;
+    text-decoration:none; cursor:pointer; transition:transform .12s ease, box-shadow .12s ease, background .2s ease, color .2s ease;
+  }
+  .btn:focus-visible{ outline:3px solid rgba(255,201,74,.65); outline-offset:2px; }
+  .btn-primary{ color:#261a00; border:1px solid #d7b855; background:linear-gradient(180deg,#ffdf7a,#ffc94a);
+    box-shadow:0 2px 10px rgba(255,186,58,.25), inset 0 1px 0 rgba(255,255,255,.5); }
+  .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 6px 18px rgba(255,186,58,.35), inset 0 1px 0 rgba(255,255,255,.65); }
+  .btn-ghost{ color:var(--ink); background:#fff; border:2px dashed #FFC94A; }
+  .btn-ghost:hover{ transform:translateY(-1px); background:rgba(255,249,232,.7); }
+
+  /* モーダル */
+  .modal{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:1000; }
+  .modal.open{ display:flex; }
+  .modal__backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); }
+  .modal__card{
+    position:relative; z-index:1; border-radius:14px; overflow:hidden; background:var(--card);
+    border:1px solid var(--line); box-shadow:0 20px 60px rgba(0,0,0,.35);
+    max-width:min(920px, 92vw); max-height:92vh; animation:popIn .18s ease;
+  }
+  .modal__img{ display:block; max-width:100%; height:auto; }
+  .modal__close{ position:absolute; top:8px; right:8px; border:0; border-radius:999px; width:36px; height:36px; background:rgba(0,0,0,.4); color:#fff; font-size:20px; line-height:1; cursor:pointer; }
+  .modal__close:hover{ background:rgba(0,0,0,.55); }
+  @keyframes popIn{ from{ transform:translateY(6px) scale(.98); opacity:.0 } to{ transform:translateY(0) scale(1); opacity:1 } }
+
+  /* トースト */
+  .toast{
+    position:fixed; left:50%; bottom:18px; transform:translateX(-50%) translateY(16px); background:#111827; color:#fff;
+    padding:12px 16px; border-radius:999px; box-shadow:0 8px 24px rgba(0,0,0,.25);
+    font-weight:700; font-size:14px; opacity:0; z-index:10000;
+    transition:opacity .18s ease, transform .18s ease;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap; box-sizing:border-box;
+
+    max-width:min(92vw, 640px); min-width:280px; line-height:1.6; white-space:normal; word-break:keep-all;
+  }
+  .toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+    pointer-events:auto;
+  }
+  .toast-msg{
+    display:inline-block;
+  }
+  .toast-actions{
+    display:inline-flex;
+    gap:8px;
+    margin-left:6px;
+  }
+  .toast-actions button{
+    border:0;
+    border-radius:999px;
+    padding:6px 10px;
+    font-weight:800;
+    font-size:12px;
+    background:#FFC94A;
+    color:#2b1d00;
+    cursor:pointer;
+  }
+  .toast-actions button:hover{
+    filter:brightness(1.05);
+    transform:translateY(-1px);
+  }
+
+  /* レスポンシブ */
+  @media (max-width:640px){
+    .hero{ grid-template-columns:1fr; gap:12px }
+    .hero-text{ align-items:center; text-align:center }
+    .logo-img{ width:130px }
+    #titleCute{ margin-top:4px }
+    .cta-row{ gap:8px } .btn{ flex:1 1 auto; text-align:center }
+    .logo-wrap{ justify-self:center; }
+  }
+
+  /* アニメ　制限　設定 */
+  @media (prefers-reduced-motion: reduce){
+    .slides{transition:none} .tab-content{animation:none} .logo-img{transition:none}
+    .chip{animation:none}
+    .chip::after{animation:none; opacity:0}
+    #titleCute{animation:none} .title-ch{animation:none}
+  }
+</style>
+</head>
+
+
+<!--
+`7MMM.     ,MMF'      db      `7MMF'`7MN.   `7MF'    `7MM"""Yp,   .g8""8q.   `7MM"""Yb.   `YMM'   `MM'
+  MMMb    dPMM       ;MM:       MM    MMN.    M        MM    Yb .dP'    `YM.   MM    `Yb.   VMA   ,V  
+  M YM   ,M MM      ,V^MM.      MM    M YMb   M        MM    dP dM'      `MM   MM     `Mb    VMA ,V   
+  M  Mb  M' MM     ,M  `MM      MM    M  `MN. M        MM"""bg. MM        MM   MM      MM     VMMP    
+  M  YM.P'  MM     AbmmmqMA     MM    M   `MM.M        MM    `Y MM.      ,MP   MM     ,MP      MM     
+  M  `YM'   MM    A'     VML    MM    M     YMM        MM    ,9 `Mb.    ,dP'   MM    ,dP'      MM     
+.JML. `'  .JMML..AMA.   .AMMA..JMML..JML.    YM      .JMMmmmd9    `"bmmd"'   .JMMmmmdP'      .JMML.   
+-->
+
+<body>
+<div class="wrap">
+  <!-- バナー -->
+  <section class="banner">
+    <div class="hero">
+      <div class="logo-wrap" id="holoLogo">
+        <img class="logo-img" src="https://cdn.discordapp.com/attachments/1407222671120400438/1416382938047709245/GuildLogo.png?ex=68c6a4e7&is=68c55367&hm=cb55fb1830118b555d3f0965bd14f144d8b5a883d7b62d370f3a0fc943575570&" alt="치즈냥이 길드 로고" width="512" height="512" decoding="async" />
+        <div class="logo-shadow" aria-hidden="true"></div>
+      </div>
+      <div class="hero-text">
+        <h1 id="titleCute" aria-label="치즈냥이"></h1>
+        <p class="catch">길드 파티로 컨텐츠 빠르게! 글라·서큐·어비스, 한 번에 스피드 클리어!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- タブ -->
+  <div class="tabs" id="tabs" role="tablist" aria-label="치즈냥이 정보 탭">
+    <button class="tab active" role="tab" aria-selected="true" aria-controls="intro" id="tab-intro" data-target="intro">길드 소개</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="rules" id="tab-rules" data-target="rules">길드 규칙</button>
+    <button class="tab" role="tab" aria-selected="false" aria-controls="join" id="tab-join" data-target="join">가입 안내</button>
+    <div class="indicator" id="indicator"></div>
+  </div>
+
+
+                        <!--
+                        `7MMF'`7MN.   `7MF'`7MM"""YMM   .g8""8q.   
+                          MM    MMN.    M    MM    `7 .dP'    `YM. 
+                          MM    M YMb   M    MM   d   dM'      `MM 
+                          MM    M  `MN. M    MM""MM   MM        MM 
+                          MM    M   `MM.M    MM   Y   MM.      ,MP 
+                          MM    M     YMM    MM       `Mb.    ,dP' 
+                        .JMML..JML.    YM  .JMML.       `"bmmd"'   
+                        -->
+
+  <section id="intro" class="tab-content active" role="tabpanel" aria-labelledby="tab-intro" tabindex="0">
+    <div class="info-box">
+      <p class="lead">공팟은 사람 모으기 번거롭고, 가끔 이상한 사람 때문에 피곤하셨죠?</p>
+      <p class="muted">하지만 길드의 과한 친목은 부담스러운데...</p>
+      <p><strong>그런 분들을 위한 컨텐츠 우선 길드, 치즈냥이!</strong></p>
+
+      <div class="chips" aria-label="길드 특징 태그">
+        <span class="chip">⚡ 컨텐츠 스피드 클리어</span>
+        <span class="chip">😌 스트레스 없는 게임</span>
+        <span class="chip">💬 가벼운 스몰토크</span>
+        <span class="chip">🎮 솔로플레이 응원</span>
+      </div>
+
+      <ul class="point-list">
+        <li><span class="bullet" aria-hidden="true"></span><span>월요일 길드 파티 편성 → 빠른 컨텐츠 클리어</span></li>
+        <li><span class="bullet" aria-hidden="true"></span><span>길드원과 함께 사고없이 NO 스트레스 플레이</span></li>
+        <li><span class="bullet" aria-hidden="true"></span><span>원할 때만 가볍게 필요한 토크만으로 부담없는 분위기</span></li>
+        <li><span class="bullet" aria-hidden="true"></span><span>공식 길드 이벤트 참가로 버리는 혜택은 제로</span></li>
+      </ul>
+    </div>
+
+    <!-- 写真　スライダー -->
+    <div class="slider" id="slider" aria-roledescription="carousel" aria-label="길드 스크린샷">
+      <div class="slides" aria-live="polite">
+        <img src="https://cdn.discordapp.com/attachments/1407222671120400438/1416289676938969151/1.png?ex=68c79f8c&is=68c64e0c&hm=873a8cd2ea5fda9bcb2c76511e275a7384c1273ca70bf353751cc5620644e01d&" alt="길드 스크린샷 1" width="1280" height="720" loading="lazy" decoding="async">
+        <img src="https://cdn.discordapp.com/attachments/1407222671120400438/1416289677547409591/2.png?ex=68c79f8c&is=68c64e0c&hm=9a06f984a824c65a4cc686185e6eac25f02e0f4d836ec748f0d36a24c1fdfa1f&" alt="길드 스크린샷 2" width="1280" height="720" loading="lazy" decoding="async">
+        <img src="https://cdn.discordapp.com/attachments/1407222671120400438/1416289678046400573/3.png?ex=68c79f8c&is=68c64e0c&hm=0e8b02927ff1a6daba746774a23306d4e1c95f252f61f9f6097291237b04ee3d&" alt="길드 스크린샷 3" width="1280" height="720" loading="lazy" decoding="async">
+        <img src="https://cdn.discordapp.com/attachments/1407222671120400438/1416289678532804658/1b39c59197c322c3.png?ex=68c79f8c&is=68c64e0c&hm=87f4f150fb0ba06a983ef4bcd27679560594e76fdc38201a01894d6bb488f388&" alt="길드 스크린샷 4" width="1280" height="720" loading="lazy" decoding="async">
+      </div>
+      <button class="prev" aria-label="이전 이미지" title="이전" type="button">&#10094;</button>
+      <button class="next" aria-label="다음 이미지" title="다음" type="button">&#10095;</button>
+    </div>
+    <div class="dots" role="tablist" aria-label="슬라이드 이동 점"></div>
+  </section>
+
+
+                        <!--
+                        `7MM"""Mq.  `7MMF'   `7MF'`7MMF'      `7MM"""YMM  
+                          MM   `MM.   MM       M    MM          MM    `7  
+                          MM   ,M9    MM       M    MM          MM   d    
+                          MMmmdM9     MM       M    MM          MMmmMM    
+                          MM  YM.     MM       M    MM      ,   MM   Y  , 
+                          MM   `Mb.   YM.     ,M    MM     ,M   MM     ,M 
+                        .JMML. .JMM.   `bmmmmd"'  .JMMmmmmMMM .JMMmmmmMMM 
+                        -->
+
+  <section id="rules" class="tab-content" role="tabpanel" aria-labelledby="tab-rules" tabindex="0">
+    <div class="info-box">
+      <p><img src="https://cdn.discordapp.com/attachments/1407222671120400438/1416625596158709821/3f67c0cf0a5d852f.png?ex=68c786e5&is=68c63565&hm=83425985b2066861fa604ae9e853581a4aaffe147508b85509ca83fe6a62035b&" width="500" height="84" /></p>
+      <p>안녕하세요! 【치즈냥이】길드장 <span style="color: #ff00ff;"><strong>「먕먕양양냥냥」</strong></span><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false">이</span>에요ㅎㅎ</p>
+      <p>저희 길드 소개에 찾아와 주신 여러분 정말 감사해요 <span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1291746693246619678.webp?size=44" width="20" aria-label=":1_M_S_045:" data-type="emoji" data-id="1291746693246619678" /></span></p>
+      <p>이제 현재 길드 활동에서 지켜야 하는 규칙을 미리 안내드릴게요!</p>
+      <p>&nbsp;</p>
+      <p><img class="lazyImg_f4758a" src="https://cdn.discordapp.com/attachments/1407222671120400438/1416625596926001233/37d404769955fdad.png?ex=68c786e5&is=68c63565&hm=60ec4766c3fb1967096d9ca85c620e61bc9d38922b33900a20036a7973c9ecce&;height=70" alt="画像" width="500" /></p>
+      <p><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/918076284934955038.webp?size=44&amp;animated=true" alt=":Emoji_Sparkles:" width="17" aria-label=":Emoji_Sparkles:" data-type="emoji" data-id="918076284934955038" />&nbsp;</span>자유롭고 라이트한 즐거운 게임 플레이 <span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/918076284934955038.webp?size=44&amp;animated=true" alt=":Emoji_Sparkles:" width="17" aria-label=":Emoji_Sparkles:" data-type="emoji" data-id="918076284934955038" /></span></p>
+      <p><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false">　<img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1215281571918258209.webp?size=44" alt=":1_a_6:" width="17" aria-label=":1_a_6:" data-type="emoji" data-id="1215281571918258209" /></span> 힘들고 지친 일상에서 잠시 벗어나 행복한 취미 활동을 공유해요!</p>
+      <p><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false">　<img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1291746693246619678.webp?size=44" alt=":1_M_S_045:" width="17" aria-label=":1_M_S_045:" data-type="emoji" data-id="1291746693246619678" /></span> 게임의 승패, 결과에 연연하지 않고, 지금 함께하는 이 순간을 즐겨봐요!</p>
+      <p>　<span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1291746698762256425.webp?size=44" alt=":1_M_S_057:" width="17" aria-label=":1_M_S_057:" data-type="emoji" data-id="1291746698762256425" /></span> 함께하는 소중한 동료를 존중하고, 서로 좋은 이야기를 해봐요!</p>
+      <p>　<span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1296276394929557610.webp?size=44" alt=":1_cat:" width="17" aria-label=":1_cat:" data-type="emoji" data-id="1296276394929557610" /></span> 언제나 함께 할 수는 없어요... 가끔은 혼자 즐기는 시간도 소중히 해주세요!</p>
+      <p>&nbsp;</p>
+      <p><img class="lazyImg_f4758a" src="https://cdn.discordapp.com/attachments/1407222671120400438/1416625597660135584/2d7f9c50a75c79bc.png?ex=68c786e6&is=68c63566&hm=0b0ef8540409e644f3afc7d6fcd8f7d42c8eb60854b968635b2004b689ab6906&;height=70" alt="画像" width="500" /></p>
+      <p><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1359205675024253281.webp?size=44" alt=":6_verified:" width="17" aria-label=":6_verified:" data-type="emoji" data-id="1359205675024253281" /></span> 활동</p>
+      <p>　 ・공지 및 정보 공유가 디스코드 개설의 주 목적이므로,</p>
+      <p>　　 컨텐츠 / 친목은 선택 사항이며 절대 강요되지 않고, 강요해서는 안된다.</p>
+      <p>　 ・보이스 &middot; 채팅 참여가 없어도 활동 유지 가능</p>
+      <p>&nbsp;</p>
+      <p><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1359205675024253281.webp?size=44" alt=":6_verified:" width="17" aria-label=":6_verified:" data-type="emoji" data-id="1359205675024253281" /></span> 게임</p>
+      <p>　 ・매 주 개인 미션 4개 달성</p>
+      <p>　 ・매 주 최소 2회 출석</p>
+      <p>&nbsp;</p>
+      <p><img class="lazyImg_f4758a" src="https://cdn.discordapp.com/attachments/1407222671120400438/1416625598003937380/6b1da967ac610130.png?ex=68c786e6&is=68c63566&hm=62d07017e926a06acd7ab450cda825048d0bde13ca12317c965200204ca83881&;height=70" alt="画像" width="500" /></p>
+      <p><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1359205668824813810.webp?size=44" alt=":6_booster:" width="17" aria-label=":6_booster:" data-type="emoji" data-id="1359205668824813810" /></span> 성격 문제</p>
+      <p>　 ・타인이 원치 않는 행위 강요　(컨텐츠&middot;친목&middot;대화 등)</p>
+      <p>　 ・게임이 아닌 사람에게 집착　 (남미새, 여미새 등)</p>
+      <p>　 ・본인의 공헌 없이 타인의 도움만 요구</p>
+      <p>　　　↳ 버스 &middot; 헬프를 받기만 하고 타인의 요청은 빈번히 협조하지 않는 경우</p>
+      <p>　 ・라이트 지향 길드 성격에 맞지 않음</p>
+      <p>　　　↳ 딜&middot;순위&middot;클래스 유불리 관련 비틱/불평/올려치기/내려치기 가 과도한 경우</p>
+      <p>　　　↳ 타 클래스와 불필요한 비교로 갈등 또는 불화를 유발하는 경우</p>
+      <p>　　　↳ 게임과 관련하여 타 길드원과 과도한 논쟁을 시도 및 유발시키는 경우</p>
+      <p>&nbsp;</p>
+      <p><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1359205668824813810.webp?size=44" alt=":6_booster:" width="17" aria-label=":6_booster:" data-type="emoji" data-id="1359205668824813810" /></span> 활동 문제</p>
+      <p>　 ・운영 방침 및 규칙을 무시하고 개인적인 방식을 고집하는 길드원</p>
+      <p>　 ・길드장 허가 없이 오프라인 모임을 주도하는 길드원</p>
+      <p>　 ・길드장 허가 없이 타 커뮤니티를 홍보하는 길드원</p>
+      <p>　　　↳ 인터넷 사이트&middot;디스코드&middot;오픈톡&middot;라인 등 소통 가능한 모든 항목</p>
+      <p>　　　↳ 타 커뮤니티 운영 여부를 은연중에 공개하는 행위도 홍보로 간주</p>
+      <p>　 ・게임 및 길드와 무관한 이야기로 타 길드원을 소외시키는 길드원</p>
+      <p>　 ・길드 외적 요인으로 길드원에게 피해를 주는 길드원</p>
+      <p>　 ・길드 내부 갈등 해결에 당사자가 적극적으로 임하지 않는 길드원</p>
+      <p>&nbsp;</p>
+      <p><span class="emojiContainer__75abc emojiContainerClickable__75abc" tabindex="0" role="button" aria-expanded="false"><img class="emoji" draggable="false" src="https://cdn.discordapp.com/emojis/1359205668824813810.webp?size=44" alt=":6_booster:" width="17" aria-label=":6_booster:" data-type="emoji" data-id="1359205668824813810" /></span> 게임 문제</p>
+      <p>　 ・사전 통보 없는 연속 5일 미접 시 강퇴</p>
+      <p>　　　↳ 미접 예상 시 사유는 밝히지 않고 “예상 일수만” 알려주면 유예 가능</p>
+      <p>　　　↳ (예: “길드장님, 7일 미접 하겠습니다.”)</p>
+      <p>　　　↳ 단, 1개월 이상 미접은 경우에 따라 사유 제시를 요청 받을 수 있음</p>
+      <p>　 ・주간 공헌도 240 미만 시 강퇴</p>
+      <p>　　　↳ 개인 미션 4개 + 주 2회 출석 시 달성 가능</p>
+      <p>&nbsp;</p>
+    </div>
+  </section>
+
+
+                        <!--
+                           `7MMF'  .g8""8q.   `7MMF'`7MN.   `7MF'
+                             MM  .dP'    `YM.   MM    MMN.    M  
+                             MM  dM'      `MM   MM    M YMb   M  
+                             MM  MM        MM   MM    M  `MN. M  
+                             MM  MM.      ,MP   MM    M   `MM.M  
+                        (O)  MM  `Mb.    ,dP'   MM    M     YMM  
+                         Ymmm9     `"bmmd"'   .JMML..JML.    YM  
+                        -->
+
+  <section id="join" class="tab-content" role="tabpanel" aria-labelledby="tab-join" tabindex="0">
+    <div class="info-box">
+      <p class="lead">치즈냥이의 길드 잘 알아 주셨나요?</p>
+      <p class="muted">치즈냥이와 더 즐겁고 편안한 게임을 즐기고 싶다면 지금 바로 가입해주세요!</p>
+      <p>디스코드 DM 또는 인게임 채팅을 통해 자유롭게 편하게!</p>
+
+      <div class="cta-row" role="group" aria-label="가입 방법 선택">
+        <a class="btn btn-primary" id="btnDiscordDM"
+           href="discord://discord.com/users/1231727418000015465"
+           title="디스코드 DM 보내기">💬 디스코드 DM 보내기</a>
+
+        <button type="button" class="btn btn-ghost" id="btnIngameGuide"
+                aria-haspopup="dialog" aria-controls="ingameModal" title="인게임 채팅 보내기">🧭 인게임 채팅 보내기</button>
+      </div>
+
+      <br>
+      <p class="lead" style="margin-top:14px">가입 신청 시 보내주실 정보</p>
+      <ul class="point-list">
+        <li><span class="bullet" aria-hidden="true"></span><span>가입 희망자의 메인 캐릭터 닉네임</span></li>
+        <li><span class="bullet" aria-hidden="true"></span><span>주요 게임 플레이 시간</span></li>
+        <li><span class="bullet" aria-hidden="true"></span><span>기타 문의 사항 (선택사항)</span></li>
+      </ul>
+      <p style="margin-top:14px">치즈냥이 길드! 많은 관심 부탁드려요 ㅎㅎ</p>
+    </div>
+  </section>
+</div>
+
+<!-- トースト -->
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- モーダル -->
+<div class="modal" id="ingameModal" role="dialog" aria-modal="true" aria-labelledby="ingameTitle" aria-hidden="true">
+  <div class="modal__backdrop" data-close="true"></div>
+  <figure class="modal__card">
+    <button class="modal__close" type="button" aria-label="닫기" title="닫기" data-close="true">✕</button>
+    <img class="modal__img" alt="인게임 채팅 안내"
+         src="https://cdn.discordapp.com/attachments/1407222671120400438/1416326848526290944/Mobinogi_Profile_2.png?ex=68c670aa&is=68c51f2a&hm=b4983d03d7a732a1f38a63b9e4f0f8f4d730331e5e2b76e39db85d26c21b050c&" />
+  </figure>
+</div>
+
+
+                        <!--
+                          .g8"""bgd `7MMF'  `7MMF'`7MM"""YMM    .g8"""bgd `7MMF' `YMM'     `7MMM.     ,MMF'  .g8""8q.   `7MM"""Yp, `7MMF'`7MMF'      `7MM"""YMM  
+                        .dP'     `M   MM      MM    MM    `7  .dP'     `M   MM   .M'         MMMb    dPMM  .dP'    `YM.   MM    Yb   MM    MM          MM    `7  
+                        dM'       `   MM      MM    MM   d    dM'       `   MM .d"           M YM   ,M MM  dM'      `MM   MM    dP   MM    MM          MM   d    
+                        MM            MMmmmmmmMM    MMmmMM    MM            MMMMM.           M  Mb  M' MM  MM        MM   MM"""bg.   MM    MM          MMmmMM    
+                        MM.           MM      MM    MM   Y  , MM.           MM  VMA          M  YM.P'  MM  MM.      ,MP   MM    `Y   MM    MM      ,   MM   Y  , 
+                        `Mb.     ,'   MM      MM    MM     ,M `Mb.     ,'   MM   `MM.        M  `YM'   MM  `Mb.    ,dP'   MM    ,9   MM    MM     ,M   MM     ,M 
+                          `"bmmmd'  .JMML.  .JMML..JMMmmmmMMM   `"bmmmd'  .JMML.   MMb.    .JML. `'  .JMML.  `"bmmd"'   .JMMmmmd9  .JMML..JMMmmmmMMM .JMMmmmmMMM 
+                        -->
+                          
+<div class="modal" id="mobileNotice" role="dialog" aria-modal="true" aria-labelledby="mobileNoticeTitle" aria-describedby="mobileNoticeDesc" aria-hidden="true">
+  <div class="modal__backdrop" data-close="true"></div>
+  <div class="modal__card" style="max-width:min(520px,92vw);padding:8px 8px 14px;">
+    <button class="modal__close" type="button" aria-label="닫기" title="닫기" data-close="true">✕</button>
+    <div style="padding:18px;">
+      <h2 id="mobileNoticeTitle" style="margin:0 0 10px;font-size:20px;">모바일 접속 안내</h2>
+      <p id="mobileNoticeDesc" style="margin:0;line-height:1.8;">
+        이 페이지는 PC 환경을 상정하여 작성하였기에<br>
+        모바일에서는 읽기 어려울 수 있어요 ㅠㅠ
+      </p>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px;">
+        <button id="mobileNoticeOk" class="btn btn-primary" type="button" style="min-width:100px;">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+ .M"""bgd   .g8"""bgd `7MM"""Mq.  `7MMF'`7MM"""Mq. MMP""MM""YMM 
+,MI    "Y .dP'     `M   MM   `MM.   MM    MM   `MM.P'   MM   `7 
+`MMb.     dM'       `   MM   ,M9    MM    MM   ,M9      MM      
+  `YMMNq. MM            MMmmdM9     MM    MMmmdM9       MM      
+.     `MM MM.           MM  YM.     MM    MM            MM      
+Mb     dM `Mb.     ,'   MM   `Mb.   MM    MM            MM      
+P"Ybmmd"    `"bmmmd'  .JMML. .JMM..JMML..JMML.        .JMML.    
+-->
+
+  <script>
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                          /*
+                          `7MMF'        .g8""8q.     .g8"""bgd    .g8""8q.       MMP""MM""YMM `7MMF'`7MMF'      MMP""MM""YMM 
+                            MM        .dP'    `YM. .dP'     `M  .dP'    `YM.     P'   MM   `7   MM    MM        P'   MM   `7 
+                            MM        dM'      `MM dM'       `  dM'      `MM          MM        MM    MM             MM      
+                            MM        MM        MM MM           MM        MM          MM        MM    MM             MM      
+                            MM      , MM.      ,MP MM.    `7MMF'MM.      ,MP          MM        MM    MM      ,      MM      
+                            MM     ,M `Mb.    ,dP' `Mb.     MM  `Mb.    ,dP'          MM        MM    MM     ,M      MM      
+                          .JMMmmmmMMM   `"bmmd"'     `"bmmmdPY    `"bmmd"'          .JMML.    .JMML..JMMmmmmMMM    .JMML.    
+                          */
+    (function(){
+      const wrap=document.getElementById('holoLogo');
+      if(!wrap || prefersReduced) return;
+      const maxTilt=24;
+      function reset(){ wrap.style.setProperty('--rx','0deg'); wrap.style.setProperty('--ry','0deg'); }
+      wrap.addEventListener('mousemove',e=>{
+        const r=wrap.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width; const y=(e.clientY-r.top)/r.height;
+        wrap.style.setProperty('--rx',(-(y-.5)*2*maxTilt)+'deg');
+        wrap.style.setProperty('--ry',((x-.5)*2*maxTilt)+'deg');
+      });
+      wrap.addEventListener('mouseleave',reset);
+    })();
+
+                          /*
+                          MMP""MM""YMM `7MMF'MMP""MM""YMM `7MMF'      `7MM"""YMM  
+                          P'   MM   `7   MM  P'   MM   `7   MM          MM    `7  
+                               MM        MM       MM        MM          MM   d    
+                               MM        MM       MM        MM          MMmmMM    
+                               MM        MM       MM        MM      ,   MM   Y  , 
+                               MM        MM       MM        MM     ,M   MM     ,M 
+                             .JMML.    .JMML.   .JMML.    .JMMmmmmMMM .JMMmmmmMMM 
+                          */
+    (function(){
+      const title=document.getElementById('titleCute');
+      if(!title) return;
+      const original='치즈냥이';
+      const imgMap={
+        '치':'https://cdn.discordapp.com/attachments/1407222671120400438/1416303711210438734/CheezePiece.png?ex=68c65b1e&is=68c5099e&hm=ffe15422b250a5c29fa99182b3857fdab5793268d58e04cf17ef4b571be05849&',
+        '즈':'https://cdn.discordapp.com/attachments/1407222671120400438/1416303709998284890/catface.png?ex=68c65b1e&is=68c5099e&hm=f758943f3add632e5321f1f440e77e1cbddee155f271084be8a2b740934f37f4&',
+        '냥':'https://cdn.discordapp.com/attachments/1407222671120400438/1416303710832693351/cheezecube.png?ex=68c65b1e&is=68c5099e&hm=8f5cdf435b1dcf0a125693ae03aa1256d1124b977d1c47773ddde8b717f8062a&',
+        '이':'https://cdn.discordapp.com/attachments/1407222671120400438/1416303710375645266/catside.png?ex=68c65b1e&is=68c5099e&hm=4f70cd936c7668459e8fb8d8ea1599a7c99692de7c30bd7742ab6c98e9ec4135&'
+      };
+      const perDelay=140, fadeDur=180, waitBeforeImage=5000, waitBeforeRevert=3000;
+
+      function renderText(){
+        title.innerHTML='';
+        [...original].forEach(ch=>{
+          const span=document.createElement('span');
+          span.className='title-ch'; span.dataset.original=ch; span.textContent=ch;
+          title.appendChild(span);
+        });
+        [...title.querySelectorAll('.title-ch')].forEach(s=>{
+          const w=s.getBoundingClientRect().width;
+          s.style.width = Math.ceil(w) + 'px';
+          s.dataset.widthPx = String(Math.ceil(w));
+        });
+      }
+      function fitImageToSpan(span){
+        const target = parseFloat(span.dataset.widthPx||'0');
+        const img = span.querySelector('img'); if(!img) return;
+        img.style.height = '0.92em';
+        requestAnimationFrame(()=>{
+          const wNow = span.getBoundingClientRect().width;
+          if(wNow > target && target > 0){
+            const ratio = Math.max(0.68, target / wNow * 0.98);
+            img.style.height = (ratio).toFixed(3) + 'em';
+          }
+        });
+      }
+      function fadeSwap(span, toImage){
+        const anim = span.animate && !prefersReduced;
+        if(anim){ span.animate([{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.96)'}],{duration:fadeDur,fill:'forwards'}); }
+        else { span.style.opacity=0; }
+
+        setTimeout(()=>{
+          if(toImage){
+            const ch=span.dataset.original; const url=imgMap[ch];
+            if(url){ span.classList.add('img-mode'); span.innerHTML = `<img class="title-img" src="${url}" alt="${ch}">`; }
+            fitImageToSpan(span);
+          }else{
+            span.classList.remove('img-mode'); span.textContent = span.dataset.original;
+          }
+          if(anim){ span.animate([{opacity:0,transform:'scale(.98)'},{opacity:1,transform:'scale(1)'}],{duration:fadeDur,fill:'forwards'}); }
+          else { span.style.opacity=1; }
+        }, fadeDur);
+      }
+      function toImages(){ [...title.querySelectorAll('.title-ch')].forEach((s,i)=> setTimeout(()=> fadeSwap(s,true), i*perDelay)); }
+      function toText(){   [...title.querySelectorAll('.title-ch')].forEach((s,i)=> setTimeout(()=> fadeSwap(s,false), i*perDelay)); }
+      function cycle(){
+        if(prefersReduced) return;
+        setTimeout(()=>{
+          toImages();
+          const sweep = perDelay*(original.length-1) + fadeDur;
+          setTimeout(()=>{
+            toText();
+            const back = perDelay*(original.length-1) + fadeDur;
+            setTimeout(cycle, back + 500);
+          }, waitBeforeRevert + sweep);
+        }, waitBeforeImage);
+      }
+      renderText(); cycle();
+    })();
+
+                          /*
+                          MMP""MM""YMM       db      `7MM"""Yp, 
+                          P'   MM   `7      ;MM:       MM    Yb 
+                               MM          ,V^MM.      MM    dP 
+                               MM         ,M  `MM      MM"""bg. 
+                               MM         AbmmmqMA     MM    `Y 
+                               MM        A'     VML    MM    ,9 
+                             .JMML.    .AMA.   .AMMA..JMMmmmd9  
+                          */
+    (function(){
+      const tabEls=[...document.querySelectorAll('[role="tab"]')];
+      const panels=[...document.querySelectorAll('[role="tabpanel"]')];
+      const indicator=document.getElementById('indicator');
+
+      function moveIndicator(activeEl){
+        const r=activeEl.getBoundingClientRect(), pr=activeEl.parentElement.getBoundingClientRect();
+        indicator.style.width=r.width+'px';
+        indicator.style.transform=`translateX(${r.left-pr.left}px)`;
+      }
+      function activate(tab){
+        tabEls.forEach(t=>{ t.classList.toggle('active', t===tab); t.setAttribute('aria-selected', t===tab ? 'true':'false'); });
+        panels.forEach(p=>p.classList.toggle('active', p.id===tab.dataset.target));
+        const panel=document.getElementById(tab.dataset.target);
+        if(panel) panel.focus({preventScroll:true});
+        moveIndicator(tab);
+      }
+      tabEls.forEach(t=>{
+        t.addEventListener('click',()=>activate(t));
+        t.addEventListener('keydown',e=>{
+          const i=tabEls.indexOf(t);
+          if(e.key==='ArrowRight'){ e.preventDefault(); activate(tabEls[(i+1)%tabEls.length]); }
+          if(e.key==='ArrowLeft'){ e.preventDefault(); activate(tabEls[(i-1+tabEls.length)%tabEls.length]); }
+        });
+      });
+      window.addEventListener('load',()=>moveIndicator(document.querySelector('.tab.active')));
+      window.addEventListener('resize',()=>moveIndicator(document.querySelector('.tab.active')));
+    })();
+
+                          /*
+                          `7MM"""Mq. `7MMF'  `7MMF'  .g8""8q.   MMP""MM""YMM   .g8""8q.        .M"""bgd `7MMF'      `7MMF'`7MM"""Yb.   `7MM"""YMM  `7MM"""Mq.  
+                            MM   `MM.  MM      MM  .dP'    `YM. P'   MM   `7 .dP'    `YM.     ,MI    "Y   MM          MM    MM    `Yb.   MM    `7    MM   `MM. 
+                            MM   ,M9   MM      MM  dM'      `MM      MM      dM'      `MM     `MMb.       MM          MM    MM     `Mb   MM   d      MM   ,M9  
+                            MMmmdM9    MMmmmmmmMM  MM        MM      MM      MM        MM       `YMMNq.   MM          MM    MM      MM   MMmmMM      MMmmdM9   
+                            MM         MM      MM  MM.      ,MP      MM      MM.      ,MP     .     `MM   MM      ,   MM    MM     ,MP   MM   Y  ,   MM  YM.   
+                            MM         MM      MM  `Mb.    ,dP'      MM      `Mb.    ,dP'     Mb     dM   MM     ,M   MM    MM    ,dP'   MM     ,M   MM   `Mb. 
+                          .JMML.     .JMML.  .JMML.  `"bmmd"'      .JMML.      `"bmmd"'       P"Ybmmd"  .JMMmmmmMMM .JMML..JMMmmmdP'   .JMMmmmmMMM .JMML. .JMM.
+                          */
+    (function(){
+      const slider=document.getElementById('slider');
+      if(!slider) return;
+      const slides=slider.querySelector('.slides');
+      const imgs=slides.querySelectorAll('img');
+      const prev=slider.querySelector('.prev');
+      const next=slider.querySelector('.next');
+      const dotsWrap=slider.parentElement.querySelector('.dots');
+
+      let index=0, total=imgs.length, timer=null, hover=false, visible=true;
+
+      for(let i=0;i<total;i++){
+        const d=document.createElement('button');
+        d.className='dot'+(i===0?' active':''); d.type='button';
+        d.setAttribute('role','tab'); d.setAttribute('aria-label',`슬라이드 ${i+1}로 이동`);
+        d.addEventListener('click',()=>{index=i; go(index,true);});
+        dotsWrap.appendChild(d);
+      }
+      const dots=dotsWrap.querySelectorAll('.dot');
+
+      function render(){ slides.style.transform=`translateX(${-index*100}%)`; dots.forEach((el,idx)=>el.classList.toggle('active', idx===index)); }
+      function go(i,reset){ index=(i+total)%total; render(); if(reset) restart(); }
+      function nextFn(){ go(index+1,false); }
+      function prevFn(){ go(index-1,true); }
+
+      prev.addEventListener('click',prevFn);
+      next.addEventListener('click',()=>{go(index+1,true)});
+
+      function shouldAutoplay(){ return !prefersReduced && !hover && visible; }
+      function restart(){ clearInterval(timer); if(shouldAutoplay()) timer=setInterval(nextFn,3000); }
+      slider.addEventListener('mouseenter',()=>{ hover=true; restart(); });
+      slider.addEventListener('mouseleave',()=>{ hover=false; restart(); });
+      document.addEventListener('visibilitychange',()=>{ visible=!document.hidden; restart(); });
+
+      imgs.forEach(img=>{ img.addEventListener('error',()=>{ img.alt += ' (이미지를 불러오지 못했습니다)'; }); });
+
+      render(); restart();
+    })();
+
+                          /*
+                             `7MMF'  .g8""8q.   `7MMF'`7MN.   `7MF'    MMP""MM""YMM   .g8""8q.         db       .M"""bgd MMP""MM""YMM 
+                               MM  .dP'    `YM.   MM    MMN.    M      P'   MM   `7 .dP'    `YM.      ;MM:     ,MI    "Y P'   MM   `7 
+                               MM  dM'      `MM   MM    M YMb   M           MM      dM'      `MM     ,V^MM.    `MMb.          MM      
+                               MM  MM        MM   MM    M  `MN. M           MM      MM        MM    ,M  `MM      `YMMNq.      MM      
+                               MM  MM.      ,MP   MM    M   `MM.M           MM      MM.      ,MP    AbmmmqMA   .     `MM      MM      
+                          (O)  MM  `Mb.    ,dP'   MM    M     YMM           MM      `Mb.    ,dP'   A'     VML  Mb     dM      MM      
+                           Ymmm9     `"bmmd"'   .JMML..JML.    YM         .JMML.      `"bmmd"'   .AMA.   .AMMA.P"Ybmmd"     .JMML.    
+                          */
+    (function(){
+      const toast = document.getElementById('toast');
+      let hideTimer = null;
+      window.showToast = function(text, opts){
+        const o = Object.assign({ duration: 4000, actions: [] }, opts || {});
+        const htmlMsg = String(text || '').replace(/\n/g, '<br>');
+        const actionsHtml = o.actions.length
+          ? `<span class="toast-actions">${o.actions.map((a,i)=>`<button type="button" data-idx="${i}">${a.label}</button>`).join('')}</span>`
+          : '';
+        toast.innerHTML = `<span class="toast-msg">${htmlMsg}</span>${actionsHtml}`;
+        toast.classList.add('show');
+
+        clearTimeout(hideTimer);
+        if(o.duration > 0){
+          hideTimer = setTimeout(()=> toast.classList.remove('show'), o.duration);
+        }
+        toast.querySelectorAll('.toast-actions button').forEach(btn=>{
+          btn.addEventListener('click', ()=>{
+            const idx = +btn.getAttribute('data-idx');
+            const act = o.actions[idx];
+            toast.classList.remove('show');
+            if(act && typeof act.onClick === 'function'){ act.onClick(); }
+          }, { once:true });
+        });
+      };
+    })();
+
+    (function(){
+      const btn = document.getElementById('btnDiscordDM');
+      if(!btn) return;
+
+      const deep = 'discord://discord.com/users/1231727418000015465';
+      const web  = 'https://discord.com/users/1231727418000015465';
+
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+
+        if(window.showToast) showToast('디스코드 앱을 확인해주세요!');
+
+        const fallbackDelay = 3000;
+
+        window.location.href = deep;
+
+        setTimeout(function(){
+          if(window.showToast) showToast(
+            '디스코드가 열리지 않으면\n버튼을 눌러 웹으로 연결가능해요',
+            {
+              duration: 6000,
+              actions: [
+                { label: '웹열기', onClick: () => {
+                    window.open(web, '_blank', 'noopener');
+                  }
+                },
+                { label: '다시시도', onClick: () => { window.location.href = deep; } }
+              ]
+            }
+          );
+        }, fallbackDelay);
+      });
+    })();
+
+                          /*
+                             `7MMF'  .g8""8q.   `7MMF'`7MN.   `7MF'    `7MMM.     ,MMF'  .g8""8q.   `7MM"""Yb.         db      `7MMF'      
+                               MM  .dP'    `YM.   MM    MMN.    M        MMMb    dPMM  .dP'    `YM.   MM    `Yb.      ;MM:       MM        
+                               MM  dM'      `MM   MM    M YMb   M        M YM   ,M MM  dM'      `MM   MM     `Mb     ,V^MM.      MM        
+                               MM  MM        MM   MM    M  `MN. M        M  Mb  M' MM  MM        MM   MM      MM    ,M  `MM      MM        
+                               MM  MM.      ,MP   MM    M   `MM.M        M  YM.P'  MM  MM.      ,MP   MM     ,MP    AbmmmqMA     MM      , 
+                          (O)  MM  `Mb.    ,dP'   MM    M     YMM        M  `YM'   MM  `Mb.    ,dP'   MM    ,dP'   A'     VML    MM     ,M 
+                           Ymmm9     `"bmmd"'   .JMML..JML.    YM      .JML. `'  .JMML.  `"bmmd"'   .JMMmmmdP'   .AMA.   .AMMA..JMMmmmmMMM 
+                          */
+    (function(){
+      const btnOpen = document.getElementById('btnIngameGuide');
+      const modal   = document.getElementById('ingameModal');
+      if(!btnOpen || !modal) return;
+
+      const open = () => {
+        modal.classList.add('open');
+        modal.removeAttribute('aria-hidden');
+        document.body.style.overflow = 'hidden';
+      };
+      const close = () => {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      };
+
+      modal.addEventListener('click', (e)=>{ if(e.target.matches('[data-close], .modal__backdrop')) close(); });
+      btnOpen.addEventListener('click', open);
+      window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('open')) close(); });
+    })();
+
+                          /*
+                          .g8"""bgd `7MMF'  `7MMF'`7MM"""YMM    .g8"""bgd `7MMF' `YMM'     `7MMM.     ,MMF'  .g8""8q.   `7MM"""Yp, `7MMF'`7MMF'      `7MM"""YMM  
+                        .dP'     `M   MM      MM    MM    `7  .dP'     `M   MM   .M'         MMMb    dPMM  .dP'    `YM.   MM    Yb   MM    MM          MM    `7  
+                        dM'       `   MM      MM    MM   d    dM'       `   MM .d"           M YM   ,M MM  dM'      `MM   MM    dP   MM    MM          MM   d    
+                        MM            MMmmmmmmMM    MMmmMM    MM            MMMMM.           M  Mb  M' MM  MM        MM   MM"""bg.   MM    MM          MMmmMM    
+                        MM.           MM      MM    MM   Y  , MM.           MM  VMA          M  YM.P'  MM  MM.      ,MP   MM    `Y   MM    MM      ,   MM   Y  , 
+                        `Mb.     ,'   MM      MM    MM     ,M `Mb.     ,'   MM   `MM.        M  `YM'   MM  `Mb.    ,dP'   MM    ,9   MM    MM     ,M   MM     ,M 
+                          `"bmmmd'  .JMML.  .JMML..JMMmmmmMMM   `"bmmmd'  .JMML.   MMb.    .JML. `'  .JMML.  `"bmmd"'   .JMMmmmd9  .JMML..JMMmmmmMMM .JMMmmmmMMM 
+                          */
+    (function(){
+      const mq = window.matchMedia('(max-width: 640px)');
+      const modal = document.getElementById('mobileNotice');
+      const okBtn = document.getElementById('mobileNoticeOk');
+      if(!modal || !okBtn) return;
+
+      const KEY = 'mobileNoticeDismissed';
+
+      function open(){
+        modal.classList.add('open');
+        modal.removeAttribute('aria-hidden');
+        document.body.style.overflow='hidden';
+      }
+      function close(){
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      }
+
+      modal.addEventListener('click', (e)=>{ if(e.target.matches('[data-close], .modal__backdrop')) { sessionStorage.setItem(KEY,'1'); close(); }});
+      okBtn.addEventListener('click', ()=>{ sessionStorage.setItem(KEY,'1'); close(); });
+      window.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modal.classList.contains('open')){ sessionStorage.setItem(KEY,'1'); close(); }});
+
+      function maybeShow(){
+        if(mq.matches && !sessionStorage.getItem(KEY)){
+          open();
+        }
+      }
+
+      window.addEventListener('load', maybeShow);
+      window.addEventListener('resize', ()=>{ if(!sessionStorage.getItem(KEY)) maybeShow(); });
+    })();
+  </script>
+</body>
+</html>
